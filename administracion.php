@@ -108,7 +108,7 @@ require_once 'config.php';
             <li><a href="especiales.php">Editar Especiales</a></li>
             <li><a href="base_especial.php">Lista de postres - Especiales</a></li>
             <li><a href="base.php">Administradores</a></li>
-            <li><a href="<?= getenv('APP_URL') ?>">Cerrar Sesión</a></li>
+            <li><a href="index.php">Cerrar Sesión</a></li>
         </ul>
     </div>
 </body>
