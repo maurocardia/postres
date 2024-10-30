@@ -12,12 +12,16 @@ $servername = $_ENV['DB_HOST'];
 $username = $_ENV['DB_USER'];
 $password = $_ENV['DB_PASS'];
 $dbname = $_ENV['DB_NAME'];
+$port = $_ENV['DB_PORT'];
+
+
 
 // Comprobar que se cargan las variables de entorno correctamente (opcional)
 
 
 // Crear conexión a la base de datos
-$conexion = new mysqli("mysql://root:RsQfWkZaNhFJtaLAtAOLBhBqTsMGtQyd@mysql.railway.internal:3306/railway");
+//$conexion = new mysqli($servername, $username, $password, $dbname);
+$conexion = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Verificar conexión
 if ($conexion->connect_error) {
