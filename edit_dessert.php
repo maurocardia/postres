@@ -5,6 +5,7 @@ require_once 'config.php';
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_GET['id'];
 
+    // Consultar los datos actuales del postre
     $sql = "SELECT id, name, price, image FROM postre WHERE id = ?";
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("i", $id);
@@ -27,26 +28,34 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $image = $_FILES['image']['name'];
 
-    // Subir imagen
+    // Gestionar la imagen
     if ($_FILES['image']['size'] > 0) {
         $target_dir = "uploads/";
-        $target_file = $target_dir . basename($image);
-        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        $unique_name = uniqid() . '_' . basename($_FILES['image']['name']);
+        $target_file = $target_dir . $unique_name;
+
+        // Mover el archivo subido
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            $image = $unique_name; // Guardar el nombre único en la base de datos
+        } else {
+            echo "Error al mover el archivo. Verifica permisos.";
+            exit();
+        }
     } else {
-        // Mantener la imagen existente si no se subió una nueva
+        // Si no se subió una nueva imagen, mantener la existente
         $sql = "SELECT image FROM postre WHERE id = ?";
         if ($stmt = $conexion->prepare($sql)) {
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $image = $row['image']; // Usar la imagen existente
+            $image = $row['image'];
             $stmt->close();
         }
     }
 
+    // Actualizar datos en la base de datos
     $sql = "UPDATE postre SET name = ?, price = ?, image = ? WHERE id = ?";
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("sdsi", $name, $price, $image, $id);
@@ -54,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             header("Location: /postres/postre.php");
             exit();
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error en la actualización: " . $stmt->error;
         }
         $stmt->close();
     } else {
