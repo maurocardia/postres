@@ -17,7 +17,7 @@ $dbname = $_ENV['DB_NAME'];
 
 
 // Crear conexión a la base de datos
-$conexion = new mysqli($servername, $username, $password, $dbname);
+$conexion = new mysqli("mysql://root:RsQfWkZaNhFJtaLAtAOLBhBqTsMGtQyd@mysql.railway.internal:3306/railway");
 
 // Verificar conexión
 if ($conexion->connect_error) {
