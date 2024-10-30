@@ -27,7 +27,7 @@ function getDbConnection() {
 
 
     // Crear conexión
-    $connection = mysqli_connect($host, $user, $password, $dbname,$dbport);
+    $connection = mysqli_connect($host, $user, $password, $dbname, $dbport);
 
     // Verificar conexión
     if (mysqli_connect_errno()) {
