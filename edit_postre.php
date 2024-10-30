@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("sdsi", $name, $price, $image, $id);
         if ($stmt->execute()) {
-            header("Location: ".$_ENV['APP_URL']."/postres/especiales.php");
+            header("Location: /especiales.php");
             exit();
         } else {
             echo "Error al actualizar el postre: " . $stmt->error;

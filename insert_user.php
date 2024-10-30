@@ -30,7 +30,7 @@ $stmt->bind_param("ssss", $full_name, $username, $password, $email);
 // Ejecutar la consulta
 if ($stmt->execute()) {
     // Redirigir a la página principal si la inserción es exitosa
-    header("Location: ".$_ENV['APP_URL']."/postres/usuario.php");
+    header("Location: /postres/usuario.php");
     exit(); // Asegúrate de que el script se detenga después de redirigir
 } else {
     echo "Error: " . $stmt->error;

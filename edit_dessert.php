@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("sdsi", $name, $price, $image, $id);
         if ($stmt->execute()) {
-            header("Location: ".$_ENV['APP_URL']."/postres/postre.php");
+            header("Location: /postres/postre.php");
             exit();
         } else {
             echo "Error: " . $stmt->error;

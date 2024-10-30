@@ -35,7 +35,7 @@ $stmt->bind_param("sss", $nombre, $email, $hashed_password);
 if ($stmt->execute()) {
     echo "Registro exitoso.";
     // Redirige a la página de inicio de sesión
-    header("Location: login.php");
+    header("Location: /login.php");
     exit();
 } else {
     echo "Error: " . $stmt->error;

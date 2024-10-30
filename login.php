@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
         $_SESSION['user_id'] = $id_usuario;
 
         // Redirige a una página segura o muestra un mensaje de éxito
-        header("Location: procesar_pedido.php");
+        header("Location: /procesar_pedido.php");
         exit();
     } else {
         echo "Credenciales incorrectas.";
