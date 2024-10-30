@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
     // Verifica la contraseña ingresada con la almacenada
     if ($password === $stored_password) {
         // Redirige a la página de administración
-        header("Location: ".$_ENV['APP_URL']."/postres/administracion.php");
+        header("Location:/postres/administracion.php");
         exit(); // Asegúrate de terminar el script después de redirigir
     } else {
         echo "Credenciales incorrectas.";

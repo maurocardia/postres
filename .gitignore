@@ -1,5 +1,5 @@
 # Archivos y carpetas de entorno
-#.env
+.env
 node_modules/
 vendor/
 
