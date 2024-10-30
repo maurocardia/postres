@@ -361,7 +361,7 @@
     <div class="content-banner">
         <p>Postres Deliciosos</p>
         <h2>100% Naturales <br>Exquisitos!</h2>
-        <a href="<?= $_ENV['APP_URL'] ?>/postres/entrar.php">Registrate para realizar tu pedido</a>
+        <a href="<?= getenv('APP_URL') ?>/postres/entrar.php">Registrate para realizar tu pedido</a>
     </div>
 </section>
 
@@ -507,7 +507,7 @@ $result = $conexion->query($sql);
             <div class="container-img">
                 <img src="img/BLOG 1.jfif" alt="Imagen Blog 1">
                 <div class="button-group-blog">
-                 <a href="<?= $_ENV['APP_URL'] ?>/postres/destino2.php" target="_blank" style="text-decoration: none;">
+                 <a href="<?= getenv('APP_URL') ?>/postres/destino2.php" target="_blank" style="text-decoration: none;">
                     <span>
                      
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -534,7 +534,7 @@ $result = $conexion->query($sql);
             <div class="container-img">
                 <img src="img/BLOG 1.jfif" alt="Imagen Blog 2">
                 <div class="button-group-blog">
-                    <a href="<?= $_ENV['APP_URL'] ?>/postres/destino3.php" target="_blank" style="text-decoration: none;">
+                    <a href="<?= getenv('APP_URL') ?>/postres/destino3.php" target="_blank" style="text-decoration: none;">
                     <span>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
@@ -560,7 +560,7 @@ $result = $conexion->query($sql);
            
                 <img src="img/BLOG 1.jfif" alt="Imagen Blog 3">
                 <div class="button-group-blog">
-                 <a href="<?= $_ENV['APP_URL'] ?>/postres/destino.php" target="_blank" style="text-decoration: none;">
+                 <a href="<?= getenv('APP_URL') ?>/postres/destino.php" target="_blank" style="text-decoration: none;">
                     <span>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>

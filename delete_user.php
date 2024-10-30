@@ -71,7 +71,7 @@ if (isset($_GET['id'])) {
         <h1></h1>
         <div class="message"><?= htmlspecialchars($message) ?></div>
         <div class="btn-container"> <!-- Contenedor para centrar el botón -->
-            <a href="<?= $_ENV['APP_URL'] ?>/postres/usuario.php" class="btn">Volver al Inicio</a> <!-- Botón para volver -->
+            <a href="<?= getenv('APP_URL') ?>/postres/usuario.php" class="btn">Volver al Inicio</a> <!-- Botón para volver -->
         </div>
     </div>
 </body>

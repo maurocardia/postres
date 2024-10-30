@@ -1,10 +1,7 @@
 <?php
-require 'config.php';
+require_once 'config.php';
 
-$connection = getDbConnection();
-
-
-$conexion = new mysqli($server, $user, $pass, $db,$port);
+$conexion = getDbConnection();
 
 if ($conexion->connect_errno){
     die("Conexion Fallida" . $conexion->connect_errno);

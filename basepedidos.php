@@ -1,15 +1,9 @@
 <?php
 session_start(); // Iniciar la sesión
 
-// Configura los detalles de conexión
-$host = $_ENV['APP_URL']; // Cambia si es necesario
-$user = 'root'; // Reemplaza con tu usuario
-$pass = ''; // Reemplaza con tu contraseña
-$db_name = 'postres_bd'; // Nombre de tu base de datos
-
 require_once 'config.php';
 // Crear conexión
-$mysqli = new mysqli($host, $user, $pass, $db_name);
+$mysqli = getDbConnection();
 
 // Verificar conexión
 if ($mysqli->connect_error) {
@@ -175,7 +169,7 @@ $mysqli->close();
         </table>
         
         <!-- Botón de menú -->
-        <a href="<?= $_ENV['APP_URL'] ?>/postres/administracion.php" class="button">Menú</a>
+        <a href="<?= getenv('APP_URL') ?>/postres/administracion.php" class="button">Menú</a>
     </div>
 </body>
 </html>

@@ -1,12 +1,9 @@
 <?php
 // Conectar a la base de datos
-$host = $_ENV['APP_URL'];
-$db = 'postres_bd';
-$user = 'root'; // Cambia esto por tu usuario
-$pass = ''; // Cambia esto por tu contraseña
+
 require_once 'config.php';
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = getDbConnection();
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);

@@ -84,7 +84,7 @@ $conexion->close();
             <input type="file" name="image" id="image" accept="image/*">
         </div>
         <input type="submit" value="Actualizar Postre">
-        <a href="<?= $_ENV['APP_URL'] ?>/postres/postre.php">Regresar a la lista</a>
+        <a href="<?= getenv('APP_URL') ?>/postres/postre.php">Regresar a la lista</a>
     </form>
 </body>
 </html>
