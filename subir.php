@@ -107,7 +107,7 @@ require_once 'config.php';
         </form>
         <div id="productos"></div>
         <div class="volver-menu">
-            <a href="<?= getenv('APP_URL') ?>/postres/administracion.php">Volver al Menú</a>
+            <a href="<?= getenv('APP_URL') ?>/administracion.php">Volver al Menú</a>
         </div>
     </div>
 
