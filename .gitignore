@@ -16,3 +16,4 @@ Thumbs.db
 /build/
 .idea/  # Carpetas de configuración de IDEs como PhpStorm, WebStorm, etc.
 .vscode/
+
