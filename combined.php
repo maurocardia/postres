@@ -2,13 +2,9 @@
 require_once 'config.php';
 session_start();
 // Configura la conexión a la base de datos
-$servername = $_ENV['DB_HOST'];
-$dbusername = "root"; // Cambia esto según tu configuración
-$dbpassword = ""; // Cambia esto según tu configuración
-$dbname = "postres_bd";
 
 // Crea la conexión
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+$conn = getDbConnection();
 
 // Verifica la conexión
 if ($conn->connect_error) {
@@ -76,7 +72,7 @@ if (isset($_POST['register_email'])) {
         </head>
         <body>
             
-            <a href='.$_ENV['APP_URL'].'/postres/entrar.php"><button>Inicia Sesión</button></a>
+            <a href='.$_ENV['APP_URL'].'/entrar.php"><button>Inicia Sesión</button></a>
         </body>
         </html>';
     } else {
@@ -160,7 +156,7 @@ if (isset($_POST['login_email'])) {
                 </head>
                 <body>
                    
-                    <a href='.$_ENV['APP_URL'].'/postres/entrar.php"><button>Regresar</button></a>
+                    <a href='.$_ENV['APP_URL'].'/entrar.php"><button>Regresar</button></a>
                 </body>
                 </html>';
             } else {
