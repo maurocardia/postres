@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("sd", $name, $price);
         if ($stmt->execute()) {
-            header("Location: /postres/postre.php"); // Redirige a la página principal
+            header("Location: /postre.php"); // Redirige a la página principal
             exit();
         } else {
             echo "Error: " . $stmt->error;
