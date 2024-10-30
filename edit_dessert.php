@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         // Enlazar parámetros
         $stmt->bind_param("sdbi", $name, $price, $image, $id);
         if ($stmt->execute()) {
-            header("Location: /postres/postre.php"); // Redirigir después de la actualización
+            header("Location: /postre.php"); // Redirigir después de la actualización
             exit();
         } else {
             echo "Error en la actualización: " . $stmt->error;
