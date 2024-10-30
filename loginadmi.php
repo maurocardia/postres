@@ -1,14 +1,9 @@
 <?php
 require_once 'config.php';
-// Configura la conexión a la base de datos
-$servername = $_ENV['DB_HOST'];
-$username = "root"; // Cambia esto según tu configuración
-$password = ""; // Cambia esto según tu configuración
-$dbname = "postres_bd";
 
 
 // Crea la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = getDbConnection();
 
 // Verifica la conexión
 if ($conn->connect_error) {
