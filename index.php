@@ -199,7 +199,7 @@
                 <li><a href="#top-categories">Mejores categorías</a></li>
                 <li><a href="#specials">Especiales</a></li>
                 <li><a href="#blogs">Blog</a></li>
-                <li><a href="/postres/entraradmi.php">Administración</a></li>
+                <li><a href="/entraradmi.php">Administración</a></li>
             </ul>
 
            
@@ -218,7 +218,7 @@
         <li><a href="#top-categories">Mejores Categorías</a></li>
         <li><a href="#specials">Especiales</a></li>
         <li><a href="#blogs">Blog</a></li>
-        <li><a href="/postres/entraradmi.php">Administración</a></li>
+        <li><a href="/entraradmi.php">Administración</a></li>
     </ul>
 </div>
 
