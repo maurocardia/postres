@@ -72,7 +72,7 @@ if (isset($_POST['register_email'])) {
         </head>
         <body>
             
-            <a href='.$_ENV['APP_URL'].'/entrar.php"><button>Inicia Sesión</button></a>
+            <a href="/entrar.php"><button>Inicia Sesión</button></a>
         </body>
         </html>';
     } else {
@@ -156,7 +156,7 @@ if (isset($_POST['login_email'])) {
                 </head>
                 <body>
                    
-                    <a href='.$_ENV['APP_URL'].'/entrar.php"><button>Regresar</button></a>
+                    <a href="/entrar.php"><button>Regresar</button></a>
                 </body>
                 </html>';
             } else {
