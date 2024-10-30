@@ -100,15 +100,15 @@ require_once 'config.php';
     <div class="sidebar">
         <h2>Menú de Administración</h2>
         <ul>
-            <li><a href="<?= getenv('APP_URL') ?>/usuario.php" target="_blank">Registro Usuarios</a></li>
+            <li><a href="<?= getenv('APP_URL') ?>/postres/usuario.php" target="_blank">Registro Usuarios</a></li>
             <li><a href="baseuser.php">Usuarios</a></li>
             <li><a href="basepedidos.php">Pedidos</a></li>
-            <li><a href="<?= getenv('APP_URL') ?>/postre.php">Editar Mejores productos</a></li>
+            <li><a href="<?= getenv('APP_URL') ?>/postres/postre.php">Editar Mejores productos</a></li>
             <li><a href="basepostre.php">Lista de postres - Mejores productos</a></li>
             <li><a href="especiales.php">Editar Especiales</a></li>
             <li><a href="base_especial.php">Lista de postres - Especiales</a></li>
             <li><a href="base.php">Administradores</a></li>
-            <li><a href="<?= getenv('APP_URL') ?>/">Cerrar Sesión</a></li>
+            <li><a href="<?= getenv('APP_URL') ?>/postres/">Cerrar Sesión</a></li>
         </ul>
     </div>
 </body>

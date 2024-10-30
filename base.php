@@ -140,7 +140,7 @@ $mysqli->close();
             <?php endif; ?>
         </table>
 
-        <a href="<?= getenv('APP_URL') ?>/administracion.php" class="button">Menú</a>
+        <a href="<?= getenv('APP_URL') ?>/postres/administracion.php" class="button">Menú</a>
     </div>
 </body>
 </html>

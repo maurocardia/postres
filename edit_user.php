@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php if ($message): ?>
             <div class="message"><?= htmlspecialchars($message) ?></div>
             <div class="btn-container"> <!-- Contenedor para centrar el botón -->
-                <a href="<?= getenv('APP_URL') ?>/usuario.php" class="btn">Volver al Inicio</a> <!-- Botón para volver -->
+                <a href="<?= getenv('APP_URL') ?>/postres/usuario.php" class="btn">Volver al Inicio</a> <!-- Botón para volver -->
             </div>
         <?php else: ?>
             <form action="edit_user.php?id=<?= $id ?>" method="post">

@@ -179,6 +179,6 @@ require_once 'config.php';
     </div>
 
     <!-- Botón para volver al menú -->
-    <a href="<?= getenv('APP_URL') ?>/administracion.php" class="button">Volver al menú</a>
+    <a href="<?= getenv('APP_URL') ?>/postres/administracion.php" class="button">Volver al menú</a>
 </body>
 </html>
