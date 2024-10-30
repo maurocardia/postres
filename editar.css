@@ -1,0 +1,66 @@
+/* Resetea algunos estilos básicos para asegurar consistencia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura el estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estilo para el formulario de edición de postres */
+.edit-dessert-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.edit-dessert-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.edit-dessert-form input[type="text"],
+.edit-dessert-form input[type="number"],
+.edit-dessert-form input[type="submit"] {
+    display: block;
+    width: calc(100% - 22px); /* Ajusta el ancho teniendo en cuenta el padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-dessert-form input[type="submit"] {
+    background-color: #bb83e0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-dessert-form input[type="submit"]:hover {
+    background-color: #cf60da;
+}
+
+/* Estilo para el enlace de regreso */
+.edit-dessert-form a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.edit-dessert-form a:hover {
+    text-decoration: underline;
+}

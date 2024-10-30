@@ -1,0 +1,137 @@
+/* Resetea algunos estilos básicos para asegurar consistencia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura el estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estilo para el formulario de postres (crear) */
+.desserts-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+.desserts-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.desserts-form input[type="text"],
+.desserts-form input[type="number"],
+.desserts-form input[type="submit"] {
+    display: block;
+    width: calc(100% - 22px); /* Ajusta el ancho teniendo en cuenta el padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.desserts-form input[type="submit"] {
+    background-color: #bb83e0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.desserts-form input[type="submit"]:hover {
+    background-color: #cf60da;
+}
+
+/* Estilo para la tabla de postres */
+.desserts-table {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.desserts-table h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el formulario de edición de postres */
+.edit-dessert-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.edit-dessert-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.edit-dessert-form input[type="text"],
+.edit-dessert-form input[type="number"],
+.edit-dessert-form input[type="submit"] {
+    display: block;
+    width: calc(100% - 22px); /* Ajusta el ancho teniendo en cuenta el padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-dessert-form input[type="submit"] {
+    background-color: #bb83e0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-dessert-form input[type="submit"]:hover {
+    background-color: #cf60da;
+}

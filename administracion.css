@@ -1,0 +1,81 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8; /* Color de fondo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.overlay {
+    display: none; /* Oculta la superposición por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.welcome-message {
+    position: absolute;
+    top: 20px; /* Espacio desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    color: #5e35b1; /* Color morado oscuro */
+    font-size: 28px; /* Tamaño de fuente más grande */
+    font-weight: bold;
+}
+
+.sidebar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px; /* Ancho del menú */
+    background-color: #673ab7; /* Color morado más vibrante */
+    color: #ffffff;
+    padding: 20px 30px; /* Espacio dentro del menú */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+    z-index: 2;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 24px; /* Tamaño de fuente más grande para el título */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Espacio entre los elementos de la lista */
+    text-align: center; /* Centra los botones */
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 12px 15px; /* Espacio dentro del botón */
+    border-radius: 6px; /* Bordes redondeados para los botones */
+    background-color: #9575cd; /* Color de fondo para los botones */
+    transition: background-color 0.3s, transform 0.2s; /* Efectos de transición */
+}
+
+.sidebar ul li a:hover {
+    background-color: #7e57c2; /* Color más oscuro para el hover */
+    transform: scale(1.05); /* Efecto de zoom en el hover */
+}

@@ -1,0 +1,154 @@
+/* Estilos generales */
+body {
+    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6; /* Color de fondo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Necesario para posicionar el mensaje de bienvenida y el menú flotante */
+}
+body {
+    background-image: url(img/purple\ aura\ MacBook\ 15_\ wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Contenedor principal del formulario */
+.contenedor__todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo del contenedor del formulario de login */
+.contenedor__login-register {
+    background: #fff; /* Fondo blanco para el contenedor del formulario */
+    padding: 30px; /* Mayor padding para hacer el contenedor más grande */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra del contenedor más pronunciada */
+    max-width: 450px; /* Ancho máximo del formulario incrementado */
+    width: 100%;
+    text-align: center; /* Centra el texto dentro del formulario */
+}
+
+/* Estilo del formulario */
+.formulario__login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre campos incrementado */
+}
+
+/* Estilo de los campos de entrada */
+.formulario__login input {
+    padding: 12px; /* Mayor padding para los campos de entrada */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 6px; /* Bordes más redondeados */
+    font-size: 18px; /* Texto más grande */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Estilo del botón */
+.formulario__login button {
+    padding: 12px; /* Mayor padding para el botón */
+    border: none; /* Sin borde */
+    border-radius: 6px; /* Bordes más redondeados */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    font-size: 18px; /* Texto más grande */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Efecto de hover para el botón */
+.formulario__login button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Estilo para la superposición (opcional) */
+.overlay {
+    display: none; /* Oculta la superposición por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Mensaje de bienvenida (opcional) */
+.welcome-message {
+    position: absolute;
+    top: 20px; /* Espacio desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    z-index: 2;
+    text-align: center;
+    color: #6a1b9a; /* Color morado para el texto */
+}
+
+/* Instrucciones (opcional) */
+.instructions {
+    position: absolute;
+    top: 80px; /* Espacio desde la parte superior, debajo del mensaje de bienvenida */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    z-index: 2;
+    text-align: center;
+    color: #6a1b9a; /* Color morado para el texto */
+}
+
+/* Menú flotante (opcional) */
+.sidebar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el menú horizontal y verticalmente */
+    width: 250px;
+    background-color: #c9a4fd; /* Color morado más claro */
+    color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    text-align: center; /* Centra los botones */
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #e2b0ff; /* Color de fondo para los botones */
+}
+
+.sidebar ul li a:hover {
+    background-color: #9c66e5; /* Color morado más oscuro para el hover */
+}
