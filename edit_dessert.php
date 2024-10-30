@@ -1,6 +1,8 @@
 <?php
-include 'conexion.php';
-require_once 'config.php';
+include 'conexion.php'; // Asegúrate de que este archivo establezca la conexión a la base de datos
+require_once 'config.php'; // Asegúrate de tener la configuración necesaria
+
+$name = $price = $image = ''; // Inicializar variables
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_GET['id'];
@@ -31,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     // Gestionar la imagen
     if ($_FILES['image']['size'] > 0) {
+        // Definir directorio y nombre único para la imagen
         $target_dir = "uploads/";
         $unique_name = uniqid() . '_' . basename($_FILES['image']['name']);
         $target_file = $target_dir . $unique_name;
@@ -49,8 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
-            $image = $row['image'];
+            if ($row = $result->fetch_assoc()) {
+                $image = $row['image']; // Usar la imagen existente
+            }
             $stmt->close();
         }
     }
@@ -60,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("sdsi", $name, $price, $image, $id);
         if ($stmt->execute()) {
-            header("Location: /postres/postre.php");
+            header("Location: /postres/postre.php"); // Redirigir después de la actualización
             exit();
         } else {
             echo "Error en la actualización: " . $stmt->error;
@@ -71,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 }
 
-$conexion->close();
+$conexion->close(); // Cerrar conexión
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +87,7 @@ $conexion->close();
     <link rel="stylesheet" href="styles_edit_dessert.css">
 </head>
 <body>
-    <form action="edit_dessert.php" method="POST" class="edit-dessert-form" enctype="multipart/form-data">
+    <form action="edit_dessert.php?id=<?= htmlspecialchars($id) ?>" method="POST" class="edit-dessert-form" enctype="multipart/form-data">
         <h1>Editar Postre</h1>
         <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
         <input type="text" name="name" value="<?= htmlspecialchars($name) ?>" required>
@@ -91,6 +95,9 @@ $conexion->close();
         <div class="image-upload">
             <label for="image">Cargar Imagen:</label>
             <input type="file" name="image" id="image" accept="image/*">
+            <?php if ($image): ?>
+                <p>Imagen actual: <?= htmlspecialchars($image) ?></p>
+            <?php endif; ?>
         </div>
         <input type="submit" value="Actualizar Postre">
         <a href="<?= getenv('APP_URL') ?>postre.php">Regresar a la lista</a>
