@@ -13,7 +13,7 @@ require_once 'config.php';
 <body>
     <div class="container">
         <h1>¡Has cerrado sesión correctamente!</h1>
-        <p>Gracias por usar el sistema. Puedes volver a la <a href="<?= getenv('APP_URL') ?>/entraradmi.php">página principal</a> o cerrar esta ventana.</p>
+        <p>Gracias por usar el sistema. Puedes volver a la <a href="<?= getenv('APP_URL') ?>entraradmi.php">página principal</a> o cerrar esta ventana.</p>
     </div>
 </body>
 </html>

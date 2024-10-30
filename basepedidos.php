@@ -169,7 +169,7 @@ $mysqli->close();
         </table>
         
         <!-- Botón de menú -->
-        <a href="<?= getenv('APP_URL') ?>/administracion.php" class="button">Menú</a>
+        <a href="<?= getenv('APP_URL') ?>administracion.php" class="button">Menú</a>
     </div>
 </body>
 </html>

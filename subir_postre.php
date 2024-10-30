@@ -99,7 +99,7 @@ $conn->close();
         <div class="message">
             <?php if (isset($mensaje)) echo htmlspecialchars($mensaje); ?>
         </div>
-        <a href="<?= getenv('APP_URL') ?>/subir.php" class="btn">Volver a la Tabla</a>
+        <a href="<?= getenv('APP_URL') ?>subir.php" class="btn">Volver a la Tabla</a>
     </div>
 </body>
 </html>
