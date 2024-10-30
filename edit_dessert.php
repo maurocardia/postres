@@ -2,7 +2,8 @@
 include 'conexion.php'; // Asegúrate de que este archivo establezca la conexión a la base de datos
 require_once 'config.php'; // Asegúrate de tener la configuración necesaria
 
-$name = $price = $image = ''; // Inicializar variables
+$name = $price = ''; // Inicializar variables
+$image = null; // Inicializar la variable de la imagen
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_GET['id'];
@@ -33,18 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     // Gestionar la imagen
     if ($_FILES['image']['size'] > 0) {
-        // Definir directorio y nombre único para la imagen
-        $target_dir = "uploads/";
-        $unique_name = uniqid() . '_' . basename($_FILES['image']['name']);
-        $target_file = $target_dir . $unique_name;
-
-        // Mover el archivo subido
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-            $image = $unique_name; // Guardar el nombre único en la base de datos
-        } else {
-            echo "Error al mover el archivo. Verifica permisos.";
-            exit();
-        }
+        // Leer el archivo de imagen en binario
+        $image = file_get_contents($_FILES['image']['tmp_name']);
     } else {
         // Si no se subió una nueva imagen, mantener la existente
         $sql = "SELECT image FROM postre WHERE id = ?";
@@ -62,7 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Actualizar datos en la base de datos
     $sql = "UPDATE postre SET name = ?, price = ?, image = ? WHERE id = ?";
     if ($stmt = $conexion->prepare($sql)) {
-        $stmt->bind_param("sdsi", $name, $price, $image, $id);
+        // Enlazar parámetros
+        $stmt->bind_param("sdbi", $name, $price, $image, $id);
         if ($stmt->execute()) {
             header("Location: /postres/postre.php"); // Redirigir después de la actualización
             exit();
@@ -96,7 +88,7 @@ $conexion->close(); // Cerrar conexión
             <label for="image">Cargar Imagen:</label>
             <input type="file" name="image" id="image" accept="image/*">
             <?php if ($image): ?>
-                <p>Imagen actual: <?= htmlspecialchars($image) ?></p>
+                <p>Imagen actual: <img src="data:image/jpeg;base64,<?= base64_encode($image) ?>" alt="Imagen" style="max-width: 100px;"></p>
             <?php endif; ?>
         </div>
         <input type="submit" value="Actualizar Postre">
