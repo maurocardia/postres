@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("i", $id);
         if ($stmt->execute()) {
-            header('Location: '.$_ENV['APP_URL'].'/postres/postre.php'); // Redirige a la página principal
+            header('Location: /postre.php'); // Redirige a la página principal
             exit();
         } else {
             echo "Error: " . $stmt->error;
