@@ -1,9 +1,14 @@
 <?php
-include 'conexion.php';
+include 'conexion.php'; // Conexión a la base de datos
+require_once 'config.php'; // Configuración adicional si es necesario
+
+$name = $price = ''; // Inicializar variables
+$image = null; // Inicializar la variable de la imagen
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_GET['id'];
 
+    // Consultar los datos actuales del postre
     $sql = "SELECT id, name, price, image FROM postre WHERE id = ?";
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("i", $id);
@@ -26,40 +31,36 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $image = $_FILES['image']['name'];
 
-    $target_dir = "uploads/";
-if (!is_dir($target_dir)) {
-    mkdir($target_dir, 0777, true); // Crear la carpeta con permisos de escritura y lectura
-}
-chmod($target_dir, 0777);
-
-    // Subir imagen
+    // Gestionar la imagen
     if ($_FILES['image']['size'] > 0) {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($image);
-        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        // Leer el archivo de imagen en binario directamente
+        $image = file_get_contents($_FILES['image']['tmp_name']);
+        echo $image;
     } else {
-        // Mantener la imagen existente si no se subió una nueva
+        // Si no se subió una nueva imagen, mantener la existente
         $sql = "SELECT image FROM postre WHERE id = ?";
         if ($stmt = $conexion->prepare($sql)) {
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
-            $image = $row['image']; // Usar la imagen existente
+            if ($row = $result->fetch_assoc()) {
+                $image = $row['image']; // Usar la imagen existente
+            }
             $stmt->close();
         }
     }
 
+    // Actualizar datos en la base de datos
     $sql = "UPDATE postre SET name = ?, price = ?, image = ? WHERE id = ?";
     if ($stmt = $conexion->prepare($sql)) {
+        // Enlazar parámetros; "sdbi" se usa si el precio es decimal, "sbbi" si es entero
         $stmt->bind_param("sdsi", $name, $price, $image, $id);
         if ($stmt->execute()) {
-            header("Location: /postre.php");
+            header("Location: /postre.php"); // Redirigir después de la actualización
             exit();
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error en la actualización: " . $stmt->error;
         }
         $stmt->close();
     } else {
@@ -67,8 +68,9 @@ chmod($target_dir, 0777);
     }
 }
 
-$conexion->close();
+$conexion->close(); // Cerrar conexión
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +91,7 @@ $conexion->close();
             <input type="file" name="image" id="image" accept="image/*">
         </div>
         <input type="submit" value="Actualizar Postre">
-        <a href="/postre.php">Regresar a la lista</a>
+        <a href="http://localhost/postres/postre.php">Regresar a la lista</a>
     </form>
 </body>
 </html>
