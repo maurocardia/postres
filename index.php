@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postres</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./uploads/magdalena.png" type="image/x-icon">
     <style>
         /* Estilos para el modal */
         .modal {
