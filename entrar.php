@@ -42,7 +42,7 @@
                 <input type="email" name="register_email" placeholder="Correo Electrónico" required>
                 <input type="text" name="username" placeholder="Usuario" required>
                 <input type="password" name="register_password" placeholder="Contraseña" required>
-                <button type="submit">Regístrarse</button>
+                <button type="">Regístrarse</button>
             </form>
         </div>
     </div>
