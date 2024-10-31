@@ -168,4 +168,9 @@ main {
         position: relative;
         top: 3rem;
     }
+
+    .formulario__register {
+        display: none;
+    }
+    
 }
