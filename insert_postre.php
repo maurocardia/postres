@@ -1,5 +1,6 @@
 <?php
 include 'conexion.php';
+require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
