@@ -1023,9 +1023,9 @@ background-image: linear-gradient(#00000080, #00000080), url('img/TORTA\ DE\ MAR
 
     .contact-info ul,
     .information ul,
-    .my-account ul{
-        display: none;
-
+    .my-account ul {
+        display: flex; /* Cambiar de none a flex para que se muestren */
+        flex-direction: column; /* Asegúrate de que se muestren en una columna */
     }
 
     .contact-info{
