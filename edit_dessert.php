@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $target_dir = "uploads/";
 if (!is_dir($target_dir)) {
     mkdir($target_dir, 0777, true); // Crear la carpeta con permisos de escritura y lectura
-    chmod($target_dir, 0777);
 }
+chmod($target_dir, 0777);
 
     // Subir imagen
     if ($_FILES['image']['size'] > 0) {
