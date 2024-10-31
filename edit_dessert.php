@@ -29,10 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $image = $_FILES['image']['name'];
 
     // Subir imagen
+    // Gestionar la imagen
     if ($_FILES['image']['size'] > 0) {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($image);
-        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+        // Leer el archivo de imagen en binario
+        $image = file_get_contents($_FILES['image']['tmp_name']);
     } else {
         // Mantener la imagen existente si no se subió una nueva
         $sql = "SELECT image FROM postre WHERE id = ?";
