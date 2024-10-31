@@ -63,3 +63,27 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 $conexion->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Postre</title>
+    <link rel="stylesheet" href="styles_edit_dessert.css">
+</head>
+<body>
+    <form action="edit_dessert.php" method="POST" class="edit-dessert-form" enctype="multipart/form-data">
+        <h1>Editar Postre</h1>
+        <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+        <input type="text" name="name" value="<?= htmlspecialchars($name) ?>" required>
+        <input type="number" name="price" value="<?= htmlspecialchars($price) ?>" step="0.01" required>
+        <div class="image-upload">
+            <label for="image">Cargar Imagen:</label>
+            <input type="file" name="image" id="image" accept="image/*">
+        </div>
+        <input type="submit" value="Actualizar Postre">
+        <a href="http://localhost/postres/postre.php">Regresar a la lista</a>
+    </form>
+</body>
+</html>
