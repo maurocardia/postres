@@ -16,12 +16,12 @@
             <div class="caja__trasera-login">
                 <h3>¿Ya tienes una cuenta?</h3>
                 <p>Inicia sesión para entrar en la página</p>
-                <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                <button type="button" id="btn__iniciar-sesion">Iniciar Sesión</button>
             </div>
             <div class="caja__trasera-register">
                 <h3>¿Aún no tienes una cuenta?</h3>
                 <p>Regístrate para que puedas iniciar sesión</p>
-                <button id="btn__registrarse">Regístrarse</button>
+                <button type="button" id="btn__registrarse">Regístrarse</button>
             </div>
         </div>
 
@@ -42,7 +42,7 @@
                 <input type="email" name="register_email" placeholder="Correo Electrónico" required>
                 <input type="text" name="username" placeholder="Usuario" required>
                 <input type="password" name="register_password" placeholder="Contraseña" required>
-                <button type="">Regístrarse</button>
+                <button type="button">Regístrarse</button>
             </form>
         </div>
     </div>
