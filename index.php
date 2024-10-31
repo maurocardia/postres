@@ -177,7 +177,7 @@
 
             <div class="container-user">
                 <!-- Enlace al perfil del usuario -->
-                <a href="/postres/entrar.php" class="user-link">
+                <a href="/entrar.php" class="user-link">
                     <i class="fa-solid fa-user"></i>
                 </a>
                 <!-- Enlace al carrito de compras -->
