@@ -14,7 +14,7 @@ let isKeyboardVisible = false; // Controlador del estado del teclado
 
 // FUNCIONES
 function anchoPage() {
-    // setTimeout(() => {
+     setTimeout(() => {
         if (!isKeyboardVisible) { // Solo ejecuta si el teclado no está visible
             if (window.innerWidth > 850) {
                 caja_trasera_register.style.display = "block";
@@ -29,7 +29,7 @@ function anchoPage() {
                 formulario_register.style.display = "none";   
             }
         }
-    // }, 1); // Ajusta el tiempo según sea necesario
+     }, 0.1); // Ajusta el tiempo según sea necesario
 }
 
 anchoPage();
