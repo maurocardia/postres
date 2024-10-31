@@ -166,5 +166,6 @@ main {
 
     .contenedor__login-register form {
         position: relative;
+        top: 2rem;
     }
 }
