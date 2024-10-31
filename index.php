@@ -437,7 +437,7 @@ $result = $conexion->query($sql);
             <?php if (!empty($row['image'])): ?>
                 <img src="data:image/jpeg;base64,<?= base64_encode($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
             <?php else: ?>
-                <img src="ruta/a/imagen/default.jpg" alt="Imagen no disponible" width="350px" height="350px" />
+                <img src="uploads/<?= htmlspecialchars($row['image']) ?>" alt="Imagen no disponible" width="350px" height="350px" />
             <?php endif; ?>
         </div>
         <div class="content-card-product">
@@ -482,7 +482,7 @@ $result = $conexion->query($sql);
         <?php while ($row = $result->fetch_assoc()): ?>
             <div class="card-product">
                 <div class="container-img">
-                    <img src="uploads/<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
+                    <img src="data:image/jpeg;base64,<?= base64_encode($row['image']) ?>"  alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
                 </div>
                 <div class="content-card-product">
                     <h3><?= htmlspecialchars($row['name']) ?></h3>
