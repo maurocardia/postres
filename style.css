@@ -658,7 +658,7 @@ background-image: linear-gradient(#00000080, #00000080), url('img/TORTA\ DE\ MAR
     }
 
     .container-blogs {
-        grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas pequeñas */
+        grid-template-columns: 1fr; Cambiar a una sola columna en pantallas pequeñas
     }
 }
 
@@ -991,8 +991,10 @@ background-image: linear-gradient(#00000080, #00000080), url('img/TORTA\ DE\ MAR
     }
 
     .container-blogs{
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
         height: 74rem;
+        overflow: auto;
+        display: flex;
     }
 
     .content-blog h3 {
@@ -1080,6 +1082,9 @@ background-image: linear-gradient(#00000080, #00000080), url('img/TORTA\ DE\ MAR
         color: #d9534f; /* Color destacado para el precio */
         font-size: 1.2em;
         margin-top: 8px;
+    }
+    .card-blogs{
+        min-width: 56rem;
     }
 
 

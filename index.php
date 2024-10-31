@@ -499,10 +499,10 @@ $result = $conexion->query($sql);
     
 
     <h1 class="heading-1" style="margin-bottom: 30px;"></h1>
-<section class=" container blogs">
+<section class="container blogs">
 
         <section id="blogs" class="blogs">
-            <h1 class="heading-1" style="margin-bottom: 20px;">Últimos blogs</h1>
+            <h1 class="heading-1" style="margin-bottom: 20px; overflow-x: auto;">Últimos blogs</h1>
             
             
         </section>
