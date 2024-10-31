@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("sdsi", $name, $price, $image, $id);
         if ($stmt->execute()) {
-            header("Location: http://localhost/postres/postre.php");
+            header("Location: /postre.php");
             exit();
         } else {
             echo "Error: " . $stmt->error;
@@ -83,7 +83,7 @@ $conexion->close();
             <input type="file" name="image" id="image" accept="image/*">
         </div>
         <input type="submit" value="Actualizar Postre">
-        <a href="http://localhost/postres/postre.php">Regresar a la lista</a>
+        <a href="/postre.php">Regresar a la lista</a>
     </form>
 </body>
 </html>
