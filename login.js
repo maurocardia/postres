@@ -28,7 +28,7 @@ function anchoPage() {
                 formulario_register.style.display = "none";   
             }
         }
-    }, 300); // Ajusta el tiempo según sea necesario
+    }, 100); // Ajusta el tiempo según sea necesario
 }
 
 anchoPage();
