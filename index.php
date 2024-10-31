@@ -434,7 +434,7 @@ $result = $conexion->query($sql);
         <?php while ($row = $result->fetch_assoc()): ?>
             <div class="card-product">
                 <div class="container-img">
-                    <img src="uploads/<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
+                    <img src="data:image/jpeg;base64,<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
                 </div>
                 <div class="content-card-product">
                     <h3><?= htmlspecialchars($row['name']) ?></h3>
