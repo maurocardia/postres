@@ -28,11 +28,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $price = $_POST['price'];
     $image = $_FILES['image']['name'];
 
+    $target_dir = "uploads/";
+if (!is_dir($target_dir)) {
+    mkdir($target_dir, 0777, true); // Crear la carpeta con permisos de escritura y lectura
+    chmod($target_dir, 0777);
+}
+
     // Subir imagen
-    // Gestionar la imagen
     if ($_FILES['image']['size'] > 0) {
-        // Leer el archivo de imagen en binario
-        $image = file_get_contents($_FILES['image']['tmp_name']);
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($image);
+        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
     } else {
         // Mantener la imagen existente si no se subió una nueva
         $sql = "SELECT image FROM postre WHERE id = ?";
