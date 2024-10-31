@@ -431,20 +431,25 @@ $result = $conexion->query($sql);
 <section id="top-products" class="container top-products">
     <h1 class="heading-1" style="margin-bottom: 20px;">Mejores Productos</h1>
     <div class="container-products">
-        <?php while ($row = $result->fetch_assoc()): ?>
-            <div class="card-product">
-                <div class="container-img">
-                    <img src="data:image/jpeg;base64,<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
-                </div>
-                <div class="content-card-product">
-                    <h3><?= htmlspecialchars($row['name']) ?></h3>
-                    <span class="add-cart">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </span>
-                    <p class="price">$<?= htmlspecialchars($row['price']) ?></p>
-                </div>
-            </div>
-        <?php endwhile; ?>
+    <?php while ($row = $result->fetch_assoc()): ?>
+    <div class="card-product">
+        <div class="container-img">
+            <?php if (!empty($row['image'])): ?>
+                <img src="data:image/jpeg;base64,<?= base64_encode($row['image']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" width="350px" height="350px" />
+            <?php else: ?>
+                <img src="ruta/a/imagen/default.jpg" alt="Imagen no disponible" width="350px" height="350px" />
+            <?php endif; ?>
+        </div>
+        <div class="content-card-product">
+            <h3><?= htmlspecialchars($row['name']) ?></h3>
+            <span class="add-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </span>
+            <p class="price">$<?= htmlspecialchars($row['price']) ?></p>
+        </div>
+    </div>
+<?php endwhile; ?>
+
     </div>
 </section>
 
