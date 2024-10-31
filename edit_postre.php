@@ -32,12 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     // Subir imagen
     if ($_FILES['image']['size'] > 0) {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($image);
-        if (!move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-            echo "Error al subir la imagen.";
-            exit();
-        }
+        $image = file_get_contents($_FILES['image']['tmp_name']);
+     
     } else {
         $sql = "SELECT image FROM especiales WHERE id = ?";
         if ($stmt = $conexion->prepare($sql)) {
