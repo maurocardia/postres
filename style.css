@@ -813,6 +813,10 @@ background-image: linear-gradient(#00000080, #00000080), url('img/TORTA\ DE\ MAR
     font-size: 1.6rem;
 }
 
+.postres-form input[type="submit"]:hover {
+    background-color: #cf60da;
+}
+
 
    
 
