@@ -32,7 +32,7 @@
                 <h2>Iniciar Sesión</h2>
                 <input type="email" name="login_email" placeholder="Correo Electrónico" required>
                 <input type="password" name="login_password" placeholder="Contraseña" required>
-                <button type="submit">Entrar</button>
+                <button type="">Entrar</button>
             </form>
 
             <!-- Register -->
