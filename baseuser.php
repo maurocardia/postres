@@ -45,6 +45,7 @@ $mysqli->close();
         }
 
         .container {
+            height: 100%;
             background-color: #ffffff; /* Fondo contenedor blanco */
             padding: 20px;
             border-radius: 15px;
